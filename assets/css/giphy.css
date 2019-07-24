@@ -1,0 +1,160 @@
+body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto Mono", Roboto, sans-serif;
+  font-weight: 400;
+}
+
+/* Stage Structure Styles */
+
+#stage {
+  width: 100%;
+  height: 100%;
+  border: 10px solid #5a7785;
+  background-color:#90a4ae;
+  background-image: url(../images/mainimage.jpg);
+  
+  position: fixed;
+  top:0;
+}
+
+#container {
+  padding: 30px;
+}
+
+#gameContainer h1 {
+  text-align: center;
+  font-size: 54px;
+  padding: 0;
+  color: #fff;
+}
+
+#gameHeader {
+  /* display: none; */
+  padding: 0 20px;
+}
+
+/* Core Game Element Styles */
+#gameChoices {
+  display: inline-block;
+ margin-top: 100px;
+ margin-left: 200px;
+ width: 75%;
+ 
+}
+
+.container {
+  padding:10px;
+}
+
+#gameChoices button {
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 26px;
+  width: 100%;
+  outline:none;
+  border:none;
+  /* background-color: #ff5722; */
+  height: 100%;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  /* padding: 12px; */
+  font-family: "Roboto Mono", Roboto, sans-serif;
+  font-weight: 400;
+}
+
+#gameChoices button:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
+  background-color:#ff6a3c;
+}
+
+.left {
+  float: left;
+  display: block;
+}
+
+.questions {
+  width: 68%;
+  /* background-color: #000; */
+  float:left;
+  display: block;
+  margin-right: 2%;
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
+}
+
+.questions span {
+  color: #5a7785;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+#gameScore {
+  color: #5a7785;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+.timer {
+  width: 15%;
+ 
+  float:left;
+  display: block;
+  margin-right: 2%;
+  font-weight: 900;
+  font-size: 30px;
+  color:rgb(55, 112, 112);
+}
+
+.score {
+  
+  float:left;
+  display: block;
+  color: #5a7785;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.half {width: 50%;}
+
+#startButton   {
+  background-color:rgb(40, 66, 64);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  line-height: 32px;
+  border-radius: 2px;
+  border:none;
+  outline: none;
+  width: 100%;
+  color:#fff;
+  font-size: 48px;
+  padding: 30px 0;
+  cursor: pointer;
+  font-family: "Roboto Mono", Roboto, sans-serif;
+  font-weight: 400;
+}
+
+#startButton:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
+  background-color:rgba(42, 159, 212, 0.603);
+}
+
+#restartButton   {
+  background-color:rgb(40, 66, 64);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  line-height: 32px;
+  border-radius: 2px;
+  border:none;
+  outline: none;
+  width: 100%;
+  color:#fff;
+  font-size: 48px;
+  padding: 30px 0;
+  cursor: pointer;
+  font-family: "Roboto Mono", Roboto, sans-serif;
+  font-weight: 400;
+}

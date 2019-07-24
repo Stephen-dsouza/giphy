@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/giphy.css">
+
+    <title>TEST</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <!-- Jumbotron -->
+        <div class="jumbotron" id="buttons-view">
+        </div>
+        <!-- <h1 class="text-center">Sign-Up Today!</h1> -->
+    </div>
+
+    <div class="row">
+        <!-- Sign-Up Card-->
+        <div class="col-lg-6">
+            <div class="card card-default">
+                <div class="card-header">
+                    Select Topic
+                </div>
+                <div class="card-body">
+
+                    <!-- Sign-up Form (note the various input "types")-->
+                    <form role="form">
+                        <div class="form-group row">
+                            <label for="topic-input">Topic:</label>
+                            <input class="form-control" id="topic-input" type="text">
+                        </div>
+                        <!-- <div class="form-group row">
+                                <label for="maxretrieve-input">No of images to retrieve:</label>
+                                <input class="form-control" id="maxretrieve-input" type="number">
+                            </div> -->
+                        <button class="btn btn-default" id="add-topic" type="submit">Submit</button>
+                        <button class="btn btn-default" id="clear-topic" type="submit">Clear</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="topics-view"></div>
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous">
+            </script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="./assets/javascript/giphy.js"></script>
+        <!-- End of jquery CDN -->
+</body>
+
+</html>
