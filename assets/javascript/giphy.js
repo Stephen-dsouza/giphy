@@ -1,12 +1,12 @@
 $(document).ready(function () {
   // Initial array of movies
   var topicList = ["Star Trek", "Avengers", "Matrix", "Stranger Things"];
-
+  var favlist=[];
   // displaytopic buttons and call everytime new button is added
   function displaytopic() {
-
+   
     var topic = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?&apikey=09m8elugi0EEuwpGSfIz5UlwHgxXrk17&limit=15&q=" + topic;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?&apikey=09m8elugi0EEuwpGSfIz5UlwHgxXrk17&q=" + topic;
     console.log(queryURL);
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
@@ -14,23 +14,26 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      // Creating a div to hold the movie topic
-      var topicDiv = $("<div class='movie'>");
 
-      // Storing the rating data
-      for (var i = 0; i < 10; i++) {
+      // Storing the rating.title and image data
+      for (var i = 0; i <10; i++) {
+        var topicDiv = $("<div class='col-sm-4 themed-grid-col movie'>");
         var rating = response.data[i].rating;
-
-        // Creating an element to have the rating displayed
+        var title = response.data[i].title;
+        // Creating an element to have the rating and title displayed
+        var gifTitle =  $("<p>").text("Title: " + title);
         var gifRatings = $("<p>").text("Rating: " + rating);
-
-        // Displaying the rating
+        
+        // Displaying the Title and rating
+        topicDiv.append("<br>");
+        topicDiv.append(gifTitle);
         topicDiv.append(gifRatings);
 
         // Retrieving the URL for the image in still and animated
         var imgURL = response.data[i].images.fixed_height_still.url;
         var imgStill = response.data[i].images.fixed_height_still.url;
         var imgAnimate = response.data[i].images.fixed_height_downsampled.url;
+
         // Creating an element to hold the images and assign data class for each state
         var image = $("<img>").attr({
           "src": imgURL,
@@ -39,11 +42,11 @@ $(document).ready(function () {
           "data-states": "still",
           "class": "gif"
         });
-
+        
         // Appending the image
         topicDiv.append(image);
 
-        // Putting the entire movie above the previous movies
+        // Putting the entire clicked topicabove the previous topics
         $("#topics-view").prepend(topicDiv);
       }
     });
@@ -61,7 +64,7 @@ $(document).ready(function () {
     for (var i = 0; i < topicList.length; i++) {
 
       // Then dynamicaly generating buttons for each movie in the array
-      // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+     
       var a = $("<button>");
       // Adding a class of topic-btn to our button
       a.addClass("topic-btn");
@@ -72,19 +75,42 @@ $(document).ready(function () {
       // Adding the button to the buttons-view div
       $("#buttons-view").append(a);
     }
+    // if(favlist.length>=0){
+    // for (var i = 0; i < savedfavouritelist.length; i++) {
+      
+    //    b = $("<button>");
+    //   // Adding a class of topic-btn to our button
+    //   b.addClass("fav-btn");
+    //   // Adding a data-attribute
+    //   b.attr("data-favorite",savedfavouritelist[i]);
+    //   // Providing the initial button text
+    //   b.text(savedfavouritelist[i]);
+    //   // Adding the button to the buttons-view div
+    //   $("#favorite-view").append(b);
+    // }}
   }
 
-  // This function handles events where a movie button is clicked
+  // This function handles events where a submit button is clicked to add anew topic
   $("#add-topic").on("click", function (event) {
     event.preventDefault();
-    // This line grabs the input from the textbox
+    console.log(this);
+    //This line grabs the input from the textbox
+    if($("#favorite-input").is(':checked') ){
     var addtopic = $("#topic-input").val().trim();
+    favlist.push(addtopic);
+    localStorage.setItem("fav-input",JSON.stringify(favlist));
+    }
+    else{
+    var addtopic = $("#topic-input").val().trim();}
 
     // Adding movie from the textbox to our array
+    // var addtopic = $("#topic-input").val().trim();
+    
     topicList.push(addtopic);
-
+    var savedfavouritelist = JSON.parse(localStorage.getItem("fav-input"));
     // Calling renderButtons which handles the processing of our movie array
     renderButtons();
+    // setLocalStorageFavourites()
   });
 
   // Adding a click event listener to all elements with a class of "movie-btn"
@@ -95,9 +121,9 @@ $(document).ready(function () {
 
   // Adding a click event listener to all elements with a class of "gif
   $(document).on("click", ".gif", stillOrAnimate);
-  consolelog(this)
+  
   function stillOrAnimate() {
-    consolelog(this);
+      console.log(this);
     if (state === "still") {
       $(this).attr("src", $(this).attr("data-animate"));
       $(this).attr("data-state", "animate");
@@ -106,5 +132,20 @@ $(document).ready(function () {
       $(this).attr("data-state", "still");
     }
   }
+  // $(".gif").on("click", function () {
+  //   console.log(this);
+  //   if (state === "still") {
+  //     $(this).attr("src", $(this).attr("data-animate"));
+  //     $(this).attr("data-state", "animate");
+  //   } else {
+  //     $(this).attr("src", $(this).attr("img"));
+  //     $(this).attr("data-state", "still");
+  //   }
+  // });
+  
+  
+
 
 });
+
+var savedfavouritelist = JSON.parse(localStorage.getItem("fav-input"));

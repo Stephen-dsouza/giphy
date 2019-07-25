@@ -1,10 +1,8 @@
-body{
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+body {
+
   font-family: "Roboto Mono", Roboto, sans-serif;
-  font-weight: 400;
+  /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 
 /* Stage Structure Styles */
@@ -13,148 +11,119 @@ body{
   width: 100%;
   height: 100%;
   border: 10px solid #5a7785;
-  background-color:#90a4ae;
+  background-color: #90a4ae;
   background-image: url(../images/mainimage.jpg);
-  
+
   position: fixed;
-  top:0;
+  top: 0;
 }
 
-#container {
-  padding: 30px;
-}
 
-#gameContainer h1 {
-  text-align: center;
-  font-size: 54px;
-  padding: 0;
-  color: #fff;
-}
-
-#gameHeader {
-  /* display: none; */
-  padding: 0 20px;
-}
-
-/* Core Game Element Styles */
-#gameChoices {
-  display: inline-block;
- margin-top: 100px;
- margin-left: 200px;
- width: 75%;
- 
-}
-
-.container {
-  padding:10px;
-}
-
-#gameChoices button {
-  position: relative;
+.topic-btn {
+  /* position: relative; */
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   line-height: 32px;
   border-radius: 2px;
-  font-size: 26px;
-  width: 100%;
-  outline:none;
-  border:none;
-  /* background-color: #ff5722; */
-  height: 100%;
-  display: block;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: aquamarine;
+  /* height: 100%; */
+  /* display: block;
   color: #fff;
   cursor: pointer;
   text-align: center;
   /* padding: 12px; */
+  margin: 5px;
   font-family: "Roboto Mono", Roboto, sans-serif;
   font-weight: 400;
 }
 
-#gameChoices button:hover {
+.btn {
+  /* position: relative; */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+
+  font-family: "Roboto Mono", Roboto, sans-serif;
+
+}
+
+.topic-btn:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
-  background-color:#ff6a3c;
+  background-color: darkgrey;
 }
 
-.left {
-  float: left;
-  display: block;
+.btn:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
+  background-color: rgba(42, 159, 212, 0.603);
 }
 
-.questions {
-  width: 68%;
-  /* background-color: #000; */
-  float:left;
-  display: block;
-  margin-right: 2%;
-  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
+.card {
+  width: 50%;
+  margin-left: 50px;
 }
 
-.questions span {
-  color: #5a7785;
-  font-weight: bolder;
-  font-size: 40px;
-}
-
-#gameScore {
-  color: #5a7785;
-  font-weight: bolder;
-  font-size: 35px;
-}
-
-.timer {
-  width: 15%;
+.movie {
+  font-weight: bold;
+  color: aliceblue;
  
-  float:left;
-  display: block;
-  margin-right: 2%;
-  font-weight: 900;
-  font-size: 30px;
-  color:rgb(55, 112, 112);
 }
 
-.score {
-  
-  float:left;
-  display: block;
-  color: #5a7785;
-  font-size: 30px;
-  font-weight: bolder;
-}
-
-.half {width: 50%;}
-
-#startButton   {
-  background-color:rgb(40, 66, 64);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  line-height: 32px;
-  border-radius: 2px;
-  border:none;
-  outline: none;
+#particles-js {
+  position: absolute;
   width: 100%;
-  color:#fff;
-  font-size: 48px;
-  padding: 30px 0;
-  cursor: pointer;
-  font-family: "Roboto Mono", Roboto, sans-serif;
-  font-weight: 400;
+  height: 100%;
+  background-color: #b61924;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
-#startButton:hover {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
-  background-color:rgba(42, 159, 212, 0.603);
+/* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
 
-#restartButton   {
-  background-color:rgb(40, 66, 64);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  line-height: 32px;
-  border-radius: 2px;
-  border:none;
-  outline: none;
-  width: 100%;
-  color:#fff;
-  font-size: 48px;
-  padding: 30px 0;
-  cursor: pointer;
-  font-family: "Roboto Mono", Roboto, sans-serif;
-  font-weight: 400;
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+.movie{
+  margin-left: 10%;
+}
+.row{
+  margin: 10px;
 }
