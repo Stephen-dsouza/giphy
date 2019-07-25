@@ -123,13 +123,15 @@ $(document).ready(function () {
   $(document).on("click", ".gif", stillOrAnimate);
   
   function stillOrAnimate() {
-      console.log(this);
-    if (state === "still") {
+    
+    if ($(this).attr("data-states") === "still") {
+      console.log(128);
       $(this).attr("src", $(this).attr("data-animate"));
-      $(this).attr("data-state", "animate");
+      $(this).attr("data-states", "animate");
     } else {
-      $(this).attr("src", $(this).attr("img"));
-      $(this).attr("data-state", "still");
+     
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-states", "still");
     }
   }
   // $(".gif").on("click", function () {
